@@ -16,7 +16,7 @@
  *  modified to allow button capability
  *
  *  Ver 1.0  -  9-12-2017
- *    Converted to support button presses with Xiaomi Zigbee Aqara Light Switch (Single Switch)
+ *    Converted to suppor button presses with Xiaomi Zigbee Aqara Light Switch (Single Switch)
  *
  *
  *  Fingerprint Endpoint data:
@@ -76,8 +76,8 @@ metadata {
 		
 		multiAttributeTile(name:"switch", type: "lighting", width: 6, height: 4, canChangeIcon: true) {
 			tileAttribute ("device.switch", key: "PRIMARY_CONTROL") {
-           		    attributeState("pushed", label:' push', action: "momentary.push", backgroundColor:"#53a7c0")
-                    attributeState("released", label:' push', action: "momentary.push", backgroundColor:"#ffffff", nextState: "pushed") 
+           		    attributeState "pushed", label:'Push', action: "momentary.push", backgroundColor:"#00a0dc"
+                attributeState "released", label:'Push', action: "momentary.push", backgroundColor:"#ffffff", nextState: "pushed"
            			
             		  
  			}
@@ -87,7 +87,7 @@ metadata {
 		}        
        
         valueTile("battery", "device.battery", decoration:"flat", inactiveLabel: false, width: 2, height: 2) {
-            state "default", label:'${currentValue}%', unit:"%", 
+            state "default", label:'${currentValue}%', unit:"%",icon:"https://raw.githubusercontent.com/bspranger/Xiaomi/master/images/XiaomiBattery.png",
             backgroundColors:[
                 [value: 10, color: "#bc2323"],
                 [value: 26, color: "#f1d801"],
